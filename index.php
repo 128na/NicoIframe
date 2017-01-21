@@ -58,6 +58,7 @@ class NicoIframe
   // URLをすべてhttpsへ書き換え。対応していないサイトは知らん。
   protected static function https_replace($str)
   {
-    return str_replace('http://', 'https://', $str);
+    $str = str_replace('http://', 'https://', $str);
+    return str_replace('<a href="https:', '<a href="http:', $str);
   }
 }
